@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+events = Event.create(
+  [
+    {
+      title: "Hacknight at Starbucks in Dallas", 
+      description: "Join us for our Hacknight in Dallas at Starbucks located inside of Addison Walk.
+
+As always, this event is open to all skill levels and is a great opportunity to work on side projects, ask questions, and just hang out with other creatives.
+
+Be sure to RSVP, and we'll see you there!"
+    },
+    {
+      title: "Hacknight at Starbucks in Dallas", 
+      description: "Join us for our Hacknight in Dallas at Starbucks located inside of Addison Walk.
+
+As always, this event is open to all skill levels and is a great opportunity to work on side projects, ask questions, and just hang out with other creatives.
+
+Be sure to RSVP, and we'll see you there!"
+    },
+    {
+      title: "Hacknight at Mudsmith Fort Worth", 
+      description: "Join us for our Hacknight in Fort Worth at the Mudsmith coffeeshop.
+
+As always, this event is open to all skill levels and is a great opportunity to work on side projects, ask questions, and just hang out with other creatives.
+
+Be sure to RSVP, and I'll see you there!"
+    },
+    {
+      title: "Hacknight at West Oak Coffee Bar", 
+      description: "Join us for our Hacknight in Denton at the West Oak Coffee Bar!
+
+As always, this event is open to all skill levels and is a great opportunity to work on side projects, ask questions, and just hang out with other creatives.
+
+Be sure to RSVP, and I'll see you there!"
+    }
+  ])
