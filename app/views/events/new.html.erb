@@ -1,0 +1,17 @@
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Events", events_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New Event</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<div class="container">
+  <h1 class="text-center">Add New Event</h1>
+
+  <%= render 'form' %>
+</div>
