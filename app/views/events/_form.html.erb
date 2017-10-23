@@ -17,13 +17,23 @@
 	      <%= f.label :title %><br>
 	      <%= f.text_field :title, :class => 'form-control' %>
 	    </div>
+
+      <div class="field form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :class => 'form-control' %>
+      </div>
 	  </div>
 
 	  <div class="col-md-6">
-	    <div class="field form-group">
-	      <%= f.label :description %><br>
-	      <%= f.text_area :description, :class => 'form-control' %>
-	    </div>
+      <div class="field form-group">
+        <%= f.label :start_time %>
+        <%= f.datetime_select :start_time %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :end_time %>
+        <%= f.datetime_select :end_time %>
+      </div>
 	  </div>
 	</div>
 
