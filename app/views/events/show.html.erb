@@ -27,9 +27,18 @@
         <div>
           <h3><%= @event.title %></h3>
         </div>
-        <div>
-          <%= @event.description %>        
-        </div>
+        <p>
+          <strong>Description:</strong>
+          <%= @event.description %>
+        </p>
+        <p>
+          <strong>Start Time:</strong>
+          <%= @event.start_time.strftime("%A, %d %B %Y at %I:%M%p") %>
+        </p>
+        <p>
+          <strong>End Time:</strong>
+          <%= @event.end_time.strftime("%A, %d %B %Y at %I:%M%p") %>
+        </p>
       </div>
     </div>
   </div>
