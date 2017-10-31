@@ -3,4 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :campaign_registrations
+  has_many :campaigns, through: :campaign_registrations
 end
