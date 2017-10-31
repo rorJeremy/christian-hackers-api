@@ -1,0 +1,2 @@
+class CampaignRegistration < ApplicationRecord
+end
