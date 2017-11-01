@@ -1,25 +1,46 @@
-<p id="notice"><%= notice %></p>
+<section class="breadcrumb-wrapper">
+  <div class="container">
+    <h2>Campaigns</h2>
+  </div>
+</section>
+<div class="container">
+  
+  <div style="padding:0;">
+    <div>
+      <br><br>
+      <div class="container">
+        <div class="col-md-12 text-center"><%= link_to "Add New Campaign", new_campaign_path, class: "btn btn-success btn-block" %></div>
+        <div class="container-fluid">
+          <div class="table-responsive">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Edit</th>
+                  <th>More Info</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @campaigns.each do |campaign| %>
+                  <tr>
+                    <td>
+                      <%= campaign.title %>
+                    </td>                            
+                    <td>
+                        <%= link_to "Edit", edit_campaign_path(campaign), class: "btn btn-info" %>
+                    </td>
+                    <td>
+                        <%= link_to "View", campaign_path(campaign), class: 'btn btn-primary' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<h1>Campaigns</h1>
+      </div>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @campaigns.each do |campaign| %>
-      <tr>
-        <td><%= link_to 'Show', campaign %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Campaign', new_campaign_path %>
+</div>
