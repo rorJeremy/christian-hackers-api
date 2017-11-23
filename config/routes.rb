@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :events
-      resources :campaigns
+      resources :campaigns do
+      	resources :campaign_registrations
+      	get 'registered_or_nah', to: 'campaign_registrations#registered_or_nah'
+      	delete 'campaign_registration/remove', to: 'campaign_registrations#destroy'
+      end
     end
   end
 end
