@@ -1,17 +1,52 @@
-<%= form_with(model: example, local: true) do |form| %>
-  <% if example.errors.any? %>
+<div class="text-center">
+<%= form_for(@example, multipart: true) do |f| %>
+  <% if @example.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(example.errors.count, "error") %> prohibited this example from being saved:</h2>
-
+      <h2><%= pluralize(@example.errors.count, "error") %> prohibited this example from being saved:</h2>
       <ul>
-      <% example.errors.full_messages.each do |message| %>
+      <% @example.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, :class => 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :main_link %><br>
+        <%= f.text_field :main_link, :class => 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :secondary_link %><br>
+        <%= f.text_field :secondary_link, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :class => 'form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :week %><br>
+        <%= f.select :week, [1, 2, 3, 4, 5, 6], :class => 'form-control' %>
+      </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="actions form-group">
+      <% if @example.new_record? %>
+        <%= link_to "Cancel", examples_path, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to "Cancel", example_path(@example), class: 'btn btn-danger' %>
+      <% end %>
+      <%= f.submit :class => 'btn btn-success' %>
+    </div>
   </div>
 <% end %>
+</div>

@@ -1,6 +1,18 @@
-<h1>Editing Example</h1>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Examples", examples_path %></li>
+        <li class="breadcrumb-item"><%= link_to "#{@example.title}", event_path(@example) %></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit</li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= render 'form', example: @example %>
+<div class="container">
+  <h1 class="text-center">Edit Example</h1>
 
-<%= link_to 'Show', @example %> |
-<%= link_to 'Back', examples_path %>
+  <%= render 'form' %>
+</div>

@@ -1,4 +1,49 @@
-<p id="notice"><%= notice %></p>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Examples", examples_path %></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @example.title %></li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= link_to 'Edit', edit_example_path(@example) %> |
-<%= link_to 'Back', examples_path %>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 well" style="padding-right:20px; border-right: 1px solid #ccc;">
+        <h1>Admin Tools</h1>
+        <div class="btn-group-vertical btn-group-lg" role="group">
+        <%= link_to "New Example", new_example_path, class: "btn btn-lg btn-success" %>
+
+        <%= link_to "Edit", edit_example_path(@example), class: "btn btn-lg btn-info" %>
+
+        <%= link_to "Delete", @example, class: "btn btn-lg btn-danger", method: "delete", data: { confirm: "Are you sure want to delete this example? This is a permanent removal. If you would rather Deactivate this product, click to 'Edit' this example instead." } %>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <h3><%= @example.title %></h3>
+        </div>
+        <p>
+          <strong>Description:</strong>
+          <%= @example.description %>
+        </p>
+        <p>
+          <strong>Main Link:</strong>
+          <%= @example.main_link %>
+        </p>
+        <p>
+          <strong>Secondary Link:</strong>
+          <%= @example.secondary_link %>
+        </p>
+        <p>
+          <strong>Week:</strong>
+          <%= @example.week %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
