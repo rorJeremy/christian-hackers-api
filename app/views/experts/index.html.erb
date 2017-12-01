@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Experts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experts.each do |expert| %>
+      <tr>
+        <td><%= link_to 'Show', expert %></td>
+        <td><%= link_to 'Edit', edit_expert_path(expert) %></td>
+        <td><%= link_to 'Destroy', expert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expert', new_expert_path %>

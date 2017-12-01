@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :experts
   resources :campaigns
   mount_devise_token_auth_for 'User', at: 'auth'
   resources :events
