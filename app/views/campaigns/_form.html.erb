@@ -1,0 +1,40 @@
+<div class="text-center">
+<%= form_for(@campaign, multipart: true) do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+      <ul>
+      <% @campaign.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :class => 'form-control' %>
+      </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="actions form-group">
+      <% if @campaign.new_record? %>
+        <%= link_to "Cancel", campaigns_path, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to "Cancel", campaign_path(@campaign), class: 'btn btn-danger' %>
+      <% end %>
+      <%= f.submit :class => 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>
+</div>

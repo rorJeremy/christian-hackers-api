@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Campaigns", campaigns_path %></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @campaign.title %></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 well" style="padding-right:20px; border-right: 1px solid #ccc;">
+        <h1>Admin Tools</h1>
+        <div class="btn-group-vertical btn-group-lg" role="group">
+        <%= link_to "New Campaign", new_campaign_path, class: "btn btn-lg btn-success" %>
+
+        <%= link_to "Edit", edit_campaign_path(@campaign), class: "btn btn-lg btn-info" %>
+
+        <%= link_to "Delete", @campaign, class: "btn btn-lg btn-danger", method: "delete", data: { confirm: "Are you sure want to delete this campaign? This is a permanent removal. If you would rather Deactivate this product, click to 'Edit' this campaign instead." } %>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <h3><%= @campaign.title %></h3>
+        </div>
+        <p>
+          <strong>Description:</strong>
+          <%= @campaign.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Campaigns", campaigns_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New Campaign</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<div class="container">
+  <h1 class="text-center">Add New Campaign</h1>
+
+  <%= render 'form' %>
+</div>
