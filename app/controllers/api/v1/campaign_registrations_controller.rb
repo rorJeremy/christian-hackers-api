@@ -20,6 +20,11 @@ class Api::V1::CampaignRegistrationsController < ApplicationController
     render json: @registered
   end
 
+  def user_campaigns
+    @user_campaigns = current_user.campaigns.order('updated_at ASC')
+    render json: @user_campaigns
+  end
+
   def create
     @registration = CampaignRegistration.where(campaign_id: params[:campaign_id], user_id: current_user.id).first
     if @registration.nil?
