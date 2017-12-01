@@ -1,5 +1,17 @@
-<h1>New Educational Resource</h1>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Educational Resources", educational_resources_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New Educational Resource</li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= render 'form', educational_resource: @educational_resource %>
+<div class="container">
+  <h1 class="text-center">Add New Educational Resource</h1>
 
-<%= link_to 'Back', educational_resources_path %>
+  <%= render 'form' %>
+</div>

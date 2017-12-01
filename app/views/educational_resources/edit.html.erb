@@ -1,6 +1,18 @@
-<h1>Editing Educational Resource</h1>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Educational Resources", educational_resources_path %></li>
+        <li class="breadcrumb-item"><%= link_to "#{@educational_resource.title}", event_path(@educational_resource) %></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit</li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= render 'form', educational_resource: @educational_resource %>
+<div class="container">
+  <h1 class="text-center">Edit Educational Resource</h1>
 
-<%= link_to 'Show', @educational_resource %> |
-<%= link_to 'Back', educational_resources_path %>
+  <%= render 'form' %>
+</div>

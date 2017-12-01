@@ -1,4 +1,49 @@
-<p id="notice"><%= notice %></p>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Educational Resources", educational_resources_path %></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @educational_resource.title %></li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= link_to 'Edit', edit_educational_resource_path(@educational_resource) %> |
-<%= link_to 'Back', educational_resources_path %>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 well" style="padding-right:20px; border-right: 1px solid #ccc;">
+        <h1>Admin Tools</h1>
+        <div class="btn-group-vertical btn-group-lg" role="group">
+        <%= link_to "New Educational Resource", new_educational_resource_path, class: "btn btn-lg btn-success" %>
+
+        <%= link_to "Edit", edit_educational_resource_path(@educational_resource), class: "btn btn-lg btn-info" %>
+
+        <%= link_to "Delete", @educational_resource, class: "btn btn-lg btn-danger", method: "delete", data: { confirm: "Are you sure want to delete this educational_resource? This is a permanent removal. If you would rather Deactivate this product, click to 'Edit' this educational_resource instead." } %>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <h3><%= @educational_resource.title %></h3>
+        </div>
+        <p>
+          <strong>Description:</strong>
+          <%= @educational_resource.description %>
+        </p>
+        <p>
+          <strong>Main Link:</strong>
+          <%= @educational_resource.main_link %>
+        </p>
+        <p>
+          <strong>Secondary Link:</strong>
+          <%= @educational_resource.secondary_link %>
+        </p>
+        <p>
+          <strong>Week:</strong>
+          <%= @educational_resource.week %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

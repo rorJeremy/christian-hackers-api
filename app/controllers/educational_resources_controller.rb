@@ -69,6 +69,6 @@ class EducationalResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def educational_resource_params
-      params.fetch(:educational_resource, {})
+      params.require(:educational_resource).permit(:title, :description, :main_link, :secondary_link, :week)
     end
 end
