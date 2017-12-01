@@ -69,6 +69,6 @@ class ExpertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expert_params
-      params.fetch(:expert, {})
+      params.require(:expert).permit(:name, :description, :main_link, :secondary_link, :week)
     end
 end

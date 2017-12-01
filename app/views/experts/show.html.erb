@@ -1,4 +1,49 @@
-<p id="notice"><%= notice %></p>
+<section>
+  <div class="container">
+    <br><br>
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Experts", experts_path %></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @expert.name %></li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<%= link_to 'Edit', edit_expert_path(@expert) %> |
-<%= link_to 'Back', experts_path %>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 well" style="padding-right:20px; border-right: 1px solid #ccc;">
+        <h1>Admin Tools</h1>
+        <div class="btn-group-vertical btn-group-lg" role="group">
+        <%= link_to "New Expert", new_expert_path, class: "btn btn-lg btn-success" %>
+
+        <%= link_to "Edit", edit_expert_path(@expert), class: "btn btn-lg btn-info" %>
+
+        <%= link_to "Delete", @expert, class: "btn btn-lg btn-danger", method: "delete", data: { confirm: "Are you sure want to delete this expert? This is a permanent removal. If you would rather Deactivate this product, click to 'Edit' this expert instead." } %>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <h3><%= @expert.name %></h3>
+        </div>
+        <p>
+          <strong>Description:</strong>
+          <%= @expert.description %>
+        </p>
+        <p>
+          <strong>Main Link:</strong>
+          <%= @expert.main_link %>
+        </p>
+        <p>
+          <strong>Secondary Link:</strong>
+          <%= @expert.secondary_link %>
+        </p>
+        <p>
+          <strong>Week:</strong>
+          <%= @expert.week %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
