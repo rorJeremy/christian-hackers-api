@@ -16,6 +16,7 @@
               <thead>
                 <tr>
                   <th>Title</th>
+                  <th>Campaign</th>
                   <th>Edit</th>
                   <th>More Info</th>
                 </tr>
@@ -25,7 +26,10 @@
                   <tr>
                     <td>
                       <%= educational_resource.title %>
-                    </td>                            
+                    </td>
+                    <td>
+                      <%= educational_resource.campaign.title %>
+                    </td>
                     <td>
                         <%= link_to "Edit", edit_educational_resource_path(educational_resource), class: "btn btn-info" %>
                     </td>
