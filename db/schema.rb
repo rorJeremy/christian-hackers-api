@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201040750) do
+ActiveRecord::Schema.define(version: 20171203024943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20171201040750) do
     t.integer "week"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "campaign_id"
+    t.index ["campaign_id"], name: "index_educational_resources_on_campaign_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -58,6 +60,8 @@ ActiveRecord::Schema.define(version: 20171201040750) do
     t.integer "week"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "campaign_id"
+    t.index ["campaign_id"], name: "index_examples_on_campaign_id"
   end
 
   create_table "experts", force: :cascade do |t|
@@ -68,6 +72,8 @@ ActiveRecord::Schema.define(version: 20171201040750) do
     t.integer "week"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "campaign_id"
+    t.index ["campaign_id"], name: "index_experts_on_campaign_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,4 +107,7 @@ ActiveRecord::Schema.define(version: 20171201040750) do
 
   add_foreign_key "campaign_registrations", "campaigns"
   add_foreign_key "campaign_registrations", "users"
+  add_foreign_key "educational_resources", "campaigns"
+  add_foreign_key "examples", "campaigns"
+  add_foreign_key "experts", "campaigns"
 end
