@@ -4,7 +4,7 @@
     <nav aria-label="breadcrumb" role="navigation">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><%= link_to "Experts", experts_path %></li>
-        <li class="breadcrumb-item"><%= link_to "#{@expert.title}", event_path(@expert) %></li>
+        <li class="breadcrumb-item"><%= link_to "#{@expert.name}", event_path(@expert) %></li>
         <li class="breadcrumb-item active" aria-current="page">Edit</li>
       </ol>
     </nav>
