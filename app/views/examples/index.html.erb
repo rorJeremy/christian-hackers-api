@@ -16,6 +16,7 @@
               <thead>
                 <tr>
                   <th>Title</th>
+                  <th>Campaign</th>
                   <th>Edit</th>
                   <th>More Info</th>
                 </tr>
@@ -25,7 +26,10 @@
                   <tr>
                     <td>
                       <%= example.title %>
-                    </td>                            
+                    </td>
+                    <td>
+                      <%= example.campaign.title %>
+                    </td>
                     <td>
                         <%= link_to "Edit", edit_example_path(example), class: "btn btn-info" %>
                     </td>
